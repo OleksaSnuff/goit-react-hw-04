@@ -13,15 +13,17 @@ function App() {
 
   useEffect(() => {
     const fetchPhoto = async () => {
-      try {
-        setError(false);
-        setLoader(true);
-        const fetchedData = await fetchQuery(query);
-        setPhotos(fetchedData);
-      } catch (error) {
-        setError(true);
-      } finally {
-        setLoader(false);
+      if (query.length > 0) {
+        try {
+          setError(false);
+          setLoader(true);
+          const fetchedData = await fetchQuery(query);
+          setPhotos(fetchedData);
+        } catch (error) {
+          setError(true);
+        } finally {
+          setLoader(false);
+        }
       }
     };
     fetchPhoto();

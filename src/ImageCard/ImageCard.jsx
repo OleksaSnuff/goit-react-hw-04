@@ -4,7 +4,7 @@ const ImageCard = ({ photoData }) => {
   //   console.log(photoData.urls.small);
   return (
     <div>
-      <img src={photoData.urls.small} alt="123" />
+      <img src={photoData.urls.small} alt="" />
     </div>
   );
 };
