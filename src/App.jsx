@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import css from "./App.module.css";
-import SearchBar from "./SearchBar/SearchBar";
+import SearchBar from "./components/SearchBar/SearchBar";
 import fetchQuery from "./gallery-api";
-import ImageGallery from "./ImageGallery/ImageGallery";
-import LoadMoreBtn from "./LoadMoreBtn/LoadMoreBtn";
-import ImageModal from "./ImageModal/ImageModal";
+import ImageGallery from "./components/ImageGallery/ImageGallery";
+import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
+import ImageModal from "./components/ImageModal/ImageModal";
 import { InfinitySpin } from "react-loader-spinner";
 
 function App() {

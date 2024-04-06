@@ -10,16 +10,18 @@ const toastStyles = {
 const SearchBar = ({ setQuery, setPhotos }) => {
   const submitHandler = (e) => {
     e.preventDefault();
-    setPhotos([]);
+
     const form = e.target;
     const formValue = form.elements.input.value;
     if (formValue.trim().length) {
+      setPhotos([]);
       setQuery(formValue);
     } else {
       toast.error("You haven't entered anything!", {
         style: toastStyles,
       });
     }
+    e.target.elements.input.value = "";
   };
 
   return (
