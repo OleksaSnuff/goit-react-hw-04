@@ -25,3 +25,10 @@ a:hover {
 body {
   margin: 0;
 }
+
+.ReactModal__Overlay--after-open {
+  background-color: #2f3033c7 !important;
+}
+.ReactModal__Content--after-open {
+  padding: 0 !important;
+}

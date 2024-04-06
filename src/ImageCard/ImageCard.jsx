@@ -1,10 +1,14 @@
-const ImageCard = ({ photoData }) => {
-  console.log(photoData);
-  //   console.log(photoData.urls);
-  //   console.log(photoData.urls.small);
+import css from "./ImageCard.module.css";
+
+const ImageCard = ({ photo, onClick }) => {
   return (
-    <div>
-      <img src={photoData.urls.small} alt="" />
+    <div className={css.image}>
+      <img
+        src={photo.urls.small}
+        alt={photo.alternative_slugs.en}
+        onClick={onClick}
+        className={css.photo}
+      />
     </div>
   );
 };

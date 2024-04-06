@@ -7,9 +7,10 @@ const toastStyles = {
   color: "#fff",
 };
 
-const SearchBar = ({ setQuery }) => {
+const SearchBar = ({ setQuery, setPhotos }) => {
   const submitHandler = (e) => {
     e.preventDefault();
+    setPhotos([]);
     const form = e.target;
     const formValue = form.elements.input.value;
     if (formValue.trim().length) {
