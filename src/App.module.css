@@ -1,11 +1,7 @@
 * {
   box-sizing: border-box;
 }
-.error {
-  width: 400px;
-  margin: 0 auto;
-  padding-top: 10px;
-}
+
 .spiner {
   display: flex;
   justify-content: center;

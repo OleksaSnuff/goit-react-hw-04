@@ -5,6 +5,7 @@ import fetchQuery from "./gallery-api";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import { InfinitySpin } from "react-loader-spinner";
 
 function App() {
@@ -36,15 +37,6 @@ function App() {
     fetchPhoto();
   }, [query, currPage]);
 
-  const bodyRef = document.querySelector("body");
-  useEffect(() => {
-    if (isModalOpen) {
-      bodyRef.style.overflow = "hidden";
-    } else {
-      bodyRef.style.overflow = "auto";
-    }
-  }, [isModalOpen, bodyRef]);
-
   const loadMore = () => {
     setCurrPage(currPage + 1);
   };
@@ -62,11 +54,7 @@ function App() {
     <>
       <SearchBar setQuery={setQuery} setPhotos={setPhotos} />
 
-      {error && (
-        <p className={css["error"]}>
-          Opps... Something gone wrong. Try to refresh page
-        </p>
-      )}
+      {error && <ErrorMessage />}
 
       {query.length > 0 && (
         <ImageGallery photoData={photos} onClick={openModal} />
